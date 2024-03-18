@@ -1,2 +1,12 @@
 *
 !.gitignore
+
+!manage.py
+!requirements.txt
+
+!dj_startup/
+!dj_startup/__init__.py
+!dj_startup/asgi.py
+!dj_startup/settings.py
+!dj_startup/urls.py
+!dj_startup/wsgi.py
