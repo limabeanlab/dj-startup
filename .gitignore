@@ -10,3 +10,13 @@
 !dj_startup/settings.py
 !dj_startup/urls.py
 !dj_startup/wsgi.py
+
+!accounts/
+!accounts/__init__.py
+!accounts/admin.py
+!accounts/apps.py
+!accounts/forms.py
+!accounts/models.py
+!accounts/tests.py
+!accounts/urls.py
+!accounts/views.py

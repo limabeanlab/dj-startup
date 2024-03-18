@@ -17,7 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", default='False') == 'True'
+# DEBUG = os.getenv("DEBUG", default='False') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -31,6 +32,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Custom Apps
+    'accounts.apps.AccountsConfig',
+    # 3rd Party
+    "fontawesomefree", # https://docs.fontawesome.com/web/use-with/python-django
+    "crispy_forms",
+    "crispy_bootstrap5", # https://github.com/django-crispy-forms/crispy-bootstrap5
 ]
 
 MIDDLEWARE = [
@@ -166,7 +173,13 @@ LOGGING = {
     },
 }
 
+# For Crispy Forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 if IS_HEROKU_APP:
     # For http to https redirect in Heroku
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
     SECURE_SSL_REDIRECT = True
+
+AUTH_USER_MODEL = "accounts.CustomUser"
